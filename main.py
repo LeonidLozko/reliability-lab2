@@ -1,16 +1,6 @@
 from copy import copy, deepcopy
 from math import log
 
-possibilities = [0.5, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94]
-linkMatrix = [[False, True, True, False, False, False, False, False],
-              [False, False, False, True, True, False, False, False],
-              [False, False, False, True, False, True, False, True],
-              [False, False, False, False, True, True, False, True],
-              [False, False, False, False, False, True, True, False],
-              [False, False, False, False, False, False, True, True],
-              [False, False, False, False, False, False, False, False],
-              [False, False, False, False, False, False, False, False]]
-
 possibilities = [0.74, 0.14, 0.56, 0.35, 0.20, 0.21]
 linkMatrix = [[False, False, True, True, True, False],
               [False, False, True, True, False, True],
@@ -117,7 +107,3 @@ else:
             possibility += composition(list(map(breakOrNot, i, possibilities)))
 print("Імовірність безвідмовної роботи системи протягом 10 годин = {}".format(possibility))
 
-'''lamb = -log(possibility) / 10
-tim = 1 / lamb
-print("Інтенсивність відмов = {}".format(lamb))
-print("Середній наробіток на відмову системи = {}".format(tim))'''
